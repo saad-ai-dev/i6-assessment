@@ -1,0 +1,15 @@
+node_modules
+dist
+.next
+coverage
+.git
+.gitignore
+.editorconfig
+.prettierrc
+.prettierignore
+.npmrc
+.nvmrc
+*.log
+*.md
+src/**/__tests__
+src/**/*.spec.ts

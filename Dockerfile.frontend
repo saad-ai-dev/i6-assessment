@@ -1,0 +1,18 @@
+FROM node:24-alpine AS builder
+
+WORKDIR /app
+COPY package.json package-lock.json ./
+COPY services/frontend/package.json ./services/frontend/
+RUN npm install --workspace=services/frontend
+
+COPY services/frontend ./services/frontend
+RUN npm run build:frontend
+
+FROM node:24-alpine
+
+RUN npm install -g serve
+
+COPY --from=builder /app/services/frontend/dist /app/dist
+
+EXPOSE 3000
+CMD ["serve", "-s", "/app/dist", "-l", "3000"]

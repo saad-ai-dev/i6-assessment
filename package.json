@@ -1,0 +1,23 @@
+{
+  "name": "i6-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Repository Explorer - Monorepo with NestJS backend and NextJS frontend",
+  "workspaces": [
+    "services/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm run dev --workspace=services/backend",
+    "dev:frontend": "npm run dev --workspace=services/frontend",
+    "build:backend": "npm run build --workspace=services/backend",
+    "build:frontend": "npm run build --workspace=services/frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,json,md}\"",
+    "test:backend": "npm run test --workspace=services/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "prettier": "^3.4.2"
+  }
+}
