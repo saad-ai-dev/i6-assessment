@@ -256,4 +256,4 @@ To create your own token: GitHub Settings > Developer settings > Personal access
 
 ## Development
 
-This assessment was developed using [Devin](https://devin.ai) — an AI software engineering tool that assisted with code generation, project structuring, and implementation across the full stack.
+This assessment was developed using [Devin](https://devin.ai) — an AI software engineering tool that assisted with code generation, project structuring, and implementation.
